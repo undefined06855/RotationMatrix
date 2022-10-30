@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+    <head>
+        <title>Rotation matrix</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: "Courier New", Courier, monospace;
+            }
+
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+
+            #wrapper {
+                width: 100%;
+                height: 100%;
+
+                background-color: #cacaca;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 5vh;
+            }
+
+            div:not(#wrapper), p {
+                width: 500px;
+            }
+
+            canvas {
+                background-color: #fff;
+            }
+
+            #letterCount {
+                width: 60px;
+            }
+
+            kbd {
+                border-radius: 2px;
+                border: 1px solid black;
+                padding: 2px;
+                background-color: rgb(190, 190, 190);
+            }
+
+            input[type="range"] {
+                width: 500px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <p>
+                You might want to use <kbd>ctrl</kbd>+<kbd>+</kbd> or <kbd>ctrl</kbd>+<kbd>-</kbd> to zoom the website in or out.
+            </p>
+
+            <canvas width="500" height="500">Your browser does not support HTML5 canvas.</canvas>
+            
+            <div>
+                <label for="scale" id="scaleLabel">Rotation (90): </label><input type="range" max="360" min="1" step="1" value="90" id="scale" oninput="rot=this.value; document.getElementById('scaleLabel').innerText = `Rotation (${('000'+this.value).slice(-3)}): `;dp()"/>
+            </div>
+        </div>
+
+        <script src="functions.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
